@@ -1,0 +1,459 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Premium Cybersecurity Theme Styles */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Geez Security Brand Colors */
+    --geez-green: #02ef56;
+    --geez-black: #000000;
+    --geez-dark-gray: #0a0a0a;
+    --geez-light-gray: #1a1a1a;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+.font-cyber {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+.font-hero {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+}
+
+.font-inter {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+
+/* Animated Background */
+.cyber-bg {
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+/* 
+.cyber-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(2, 239, 86, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 75% 75%, rgba(2, 239, 86, 0.1) 0%, transparent 60%);
+  animation: pulse 4s ease-in-out infinite alternate;
+} */
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(2, 239, 86, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 239, 86, 0.15) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Glassmorphism Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(2, 239, 86, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Added utility classes for GPU rendering */
+.backface-visibility-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  box-shadow: 0 0 1px rgba(2, 239, 86, 0.7), 0 0 1px rgba(2, 239, 86, 0.4), 0 0 1px rgba(2, 239, 86, 0.3);
+}
+
+.neon-text {
+  color: #02ef56;
+  text-shadow: 0 0 1px rgba(2, 239, 86, 1), 0 0 1px rgba(2, 239, 86, 0.8), 0 0 1px rgba(2, 239, 86, 0.6);
+}
+
+.neon-border {
+  border: 2px solid #02ef56;
+  box-shadow: inset 0 0 10px rgba(2, 239, 86, 0.4), 0 0 10px rgba(2, 239, 86, 0.5);
+}
+
+/* Hover Animations */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(2, 239, 86, 0.2);
+}
+
+/* Button Styles */
+.btn-cyber {
+  background: linear-gradient(135deg, #02ef56 0%, #00cc47 100%);
+  border: none;
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 1px rgba(2, 239, 86, 0.4), 0 0 1px rgba(2, 239, 86, 0.2);
+}
+
+.btn-cyber::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.btn-cyber:hover::before {
+  left: 100%;
+}
+
+.btn-cyber:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(2, 239, 86, 0.6), 0 0 20px rgba(2, 239, 86, 0.4);
+}
+
+/* Card Styles */
+.card-cyber {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(2, 239, 86, 0.3);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.card-cyber:hover {
+  border-color: rgba(2, 239, 86, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(2, 239, 86, 0.2);
+}
+
+/* GTWSS specific card styles */
+.card-gtwss {
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+.card-gtwss:hover {
+  border-color: rgba(245, 158, 11, 0.6) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(245, 158, 11, 0.2) !important;
+}
+
+/* Loading Animation */
+.loading-cyber {
+  position: relative;
+}
+
+.loading-cyber::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(2, 239, 86, 0.3), transparent);
+  animation: loading-sweep 1.5s infinite;
+}
+
+@keyframes loading-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Typing Animation */
+.typing-animation {
+  overflow: hidden;
+  border-right: 2px solid #02ef56;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #02ef56;
+  }
+}
+
+/* Particle Effect */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #02ef56;
+  border-radius: 50%;
+  animation: float 6s infinite linear;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #02ef56, #00cc47);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #00cc47, #02ef56);
+}
+
+/* Form Input Styles */
+.input-cyber {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(2, 239, 86, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.input-cyber:focus {
+  border-color: #02ef56;
+  box-shadow: 0 0 10px rgba(2, 239, 86, 0.3);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.input-cyber::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Progress Bar */
+.progress-cyber {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(2, 239, 86, 0.3);
+  overflow: hidden;
+}
+
+.progress-cyber-fill {
+  background: linear-gradient(90deg, #02ef56, #00cc47);
+  height: 100%;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.progress-cyber-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Matrix Rain Effect */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cyber-grid {
+    background-size: 30px 30px;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 3px rgba(2, 239, 86, 0.5), 0 0 6px rgba(2, 239, 86, 0.3);
+  }
+}
+
+/* GTCRT (Red Team) specific card styles */
+.card-gtcrt {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.card-gtcrt:hover {
+  border-color: rgba(239, 68, 68, 0.6) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Red neon glow */
+.neon-glow-red {
+  box-shadow: 0 0 5px rgba(239, 68, 68, 0.7), 0 0 10px rgba(239, 68, 68, 0.4), 0 0 15px rgba(239, 68, 68, 0.3);
+}
+
+.neon-text-red {
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 1), 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.6);
+}
+
+/* Red cyber button */
+.btn-cyber-red {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4), 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.btn-cyber-red:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.4);
+}
